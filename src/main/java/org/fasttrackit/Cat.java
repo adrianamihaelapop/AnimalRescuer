@@ -2,7 +2,7 @@ package org.fasttrackit;
 
 
 // is-a relationship.
-public class Cat extends Animal {
+public class Cat  {
 
     boolean needMedicalServices;
     String favActivity;

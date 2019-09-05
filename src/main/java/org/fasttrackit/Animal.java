@@ -2,9 +2,11 @@ package org.fasttrackit;
 
 import java.lang.reflect.Type;
 
-public class Animal {
+public class Animal extends Feline
+{
 
    String name;
+
 
 
    // has a relationship.

@@ -1,6 +1,6 @@
 package org.fasttrackit;
 
-public class Feline extends Cat {
+public class Feline extends Cat{
 
     double needForSleep;
     double hungerLevel;
