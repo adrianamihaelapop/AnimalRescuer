@@ -4,11 +4,22 @@ import java.lang.reflect.Type;
 
 public class Animal {
 
-   String type;
+   String name;
    double needForSleep;
    double hungerLevel;
    int needForGames;
    boolean needMedicalServices;
+   int age;
+   int mood;
+   String favFood;
+   String favActivity;
+
+   // has a relationship.
+   AnimalFood animalFood;
+   JoyActivity joyActivity;
+   Veterinarian veterinarian;
+   Rescuer rescuer;
+   Game game;
 
    public double getNeedForSleep (double DurationInHours) {
             return needForSleep;
