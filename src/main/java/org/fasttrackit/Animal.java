@@ -9,12 +9,7 @@ public class Animal extends Feline
 
 
 
-   // has a relationship.
-   AnimalFood animalFood;
-   JoyActivity joyActivity;
-   Veterinarian veterinarian;
-   Rescuer rescuer;
-   Game game;
+
 
 
 

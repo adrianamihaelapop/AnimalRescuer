@@ -2,7 +2,7 @@ package org.fasttrackit;
 
 
 // is-a relationship.
-public class Cat  {
+public class Vertebrate {
 
     boolean needMedicalServices;
     String favActivity;

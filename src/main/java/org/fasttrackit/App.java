@@ -1,5 +1,7 @@
 package org.fasttrackit;
 
+import java.time.LocalDate;
+
 /**
  * Hello world!
  *
@@ -30,7 +32,7 @@ public class App {
         animalFood.name = "Meat";
         animalFood.name2 = "milk";
         animalFood.quantity = 20;
-        animalFood.expirationDate = 2-7-2020;
+        animalFood.expirationDate = LocalDate.of(2020, 03,17);
         animalFood.value = 500;
         animalFood.stockAvailability = true;
 
@@ -41,10 +43,7 @@ public class App {
         veterinarian.name = "Augustus";
         veterinarian.specialization = "Doctor, medical man, catLover";
 
-        Game game = new Game();
-        game.rescuer = "the rescuer helps the animal to play";
-        game.animal = " guided by the instructions given by the rescuer";
-        game.veterinarian = "takes care of the animal in case of an accident";
+
 
 
     }
