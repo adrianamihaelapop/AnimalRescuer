@@ -8,5 +8,10 @@ public class Game {
     Veterinarian veterinarian;
     Rescuer rescuer;
 
+    public Game ( Animal animal, Veterinarian veterinarian, Rescuer rescuer) {
+        this.animal = animal;
+        this.veterinarian = veterinarian;
+        this.rescuer = rescuer;
+    }
 
 }

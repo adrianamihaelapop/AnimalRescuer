@@ -18,6 +18,7 @@ public class App {
         animal.age = 1-24;
         animal.mood = 1-7;
         animal.favFood = "Meat and fruits";
+        System.out.println( animal.healthState + " " + animal.hungerLevel + " " + animal.needForSleep);
 
        Cat cat1 = new Cat(4,5,65, "rasa de pisica");
        cat1.name = "Yiti";
@@ -32,6 +33,7 @@ public class App {
        horse.name = "Felix";
        horse.hasOwner = false;
        horse.isVaccinated = true;
+        System.out.println( horse.healthState + " " + horse.hungerLevel + " " + horse.needForSleep);
 
 
         Rescuer rescuer = new Rescuer( "Tom", 4000 );
@@ -44,23 +46,32 @@ public class App {
 
         AnimalFood animalFood = new AnimalFood(200, 7 );
         animalFood.name = "Meat";
-        //animalFood.name2 = "milk";
-        //animalFood.quantity = 20;
-        animalFood.expirationDate = LocalDate.of(2020, 03,17);
+        animalFood.quantity = 20;
+        animalFood.expirationDate = LocalDate.of(2020, 3,17);
         animalFood.price = 500;
         animalFood.stockAvailability = true;
         System.out.println(animalFood.price + " " + animalFood.quantity);
 
-        JoyActivity joyActivity = new JoyActivity();
+        JoyActivity joyActivity = new JoyActivity(" ping pong", 3);
         joyActivity.mame = "ping pong";
+        System.out.println( joyActivity.mame + " " + joyActivity.requiredTimePerActivity);
 
         Veterinarian veterinarian = new Veterinarian("Augustus", "Veterinarian");
         System.out.println( veterinarian.name + "" + " " + veterinarian.specialization);
-
-
         veterinarian.diagnoses(horse.name, "cancer");
 
 
+        DomesticAnimal domesticAnimal = new DomesticAnimal(10, 7, 8);
+        domesticAnimal.strength = 10;
+        domesticAnimal.isFriendly = true;
+        domesticAnimal.isVaccinated = true;
+        System.out.println( domesticAnimal.healthState + " " + domesticAnimal.hungerLevel + " " + domesticAnimal.needForSleep );
+
+        Game game = new Game(animal, veterinarian, rescuer);
+        game.rescuer = rescuer;
+        game.animal = animal;
+        game.veterinarian = veterinarian;
+        System.out.println( game.animal + " " + game.veterinarian + " " + game.rescuer);
 
 
     }

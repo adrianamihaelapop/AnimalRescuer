@@ -12,6 +12,8 @@ public class DomesticAnimal extends Animal {
     int strength;
     boolean isFriendly;
 
+
+
 }
 
 
