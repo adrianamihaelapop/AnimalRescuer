@@ -41,7 +41,7 @@ public class App {
         System.out.println( rescuer.name + " " + rescuer.coins );
         rescuer.name = "Tom";
         rescuer.coins = 5000;
-        rescuer.feedTheAnimal ( 4.1, cat, "ground beef");
+        rescuer.feedTheAnimal ( 4.3, cat, "ground beef");
         rescuer.caressedTheAnimal (horse.name, 7.8);
         System.out.println (rescuer.name + " " + rescuer.coins );
 
