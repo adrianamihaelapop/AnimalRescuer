@@ -12,13 +12,13 @@ public class Rescuer {
         this.coins = coins;
     }
 
-    public  void  feedTheAnimal (String animalName, double hungerLevel, String meat ) {
+    public  void  feedTheAnimal (Animal animal, AnimalFood food, Rescuer rescuer) {
 
-        System.out.println( name + " just gave some " + meat + animalName + " result " + hungerLevel + " decrease in hunger level" ); }
+        System.out.println( rescuer + " just gave some " + food + "meat" + animal + " result decrease in hunger level" ); }
 
 
-    public void caressedTheAnimal ( String animalName, double needToBeCaressed){
-        System.out.println( animalName + " just gave some joy activity is now purring and feel much happier. His need to be caressed was at level " + needToBeCaressed );
+    public void caressedTheAnimal ( Animal animal, Rescuer rescuer){
+        System.out.println ( animal + " just gave some joy activity from: " + rescuer +  " is now purring and feel much happier ");
     }
 
 

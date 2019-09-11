@@ -71,7 +71,7 @@ public class App {
         game.rescuer = rescuer;
         game.animal = animal;
         game.veterinarian = veterinarian;
-        System.out.println( game.animal + " " + game.veterinarian + " " + game.rescuer);
+        System.out.println( game.rescuer.name + " " + game.animal.name + " " + game.veterinarian.name);
 
 
     }
