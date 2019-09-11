@@ -1,5 +1,6 @@
 package org.fasttrackit;
 
+import javax.lang.model.element.Name;
 import java.time.LocalDate;
 
 /**
@@ -20,11 +21,11 @@ public class App {
         animal.favFood = "Meat and fruits";
         System.out.println( animal.healthState + " " + animal.hungerLevel + " " + animal.needForSleep);
 
-       Cat cat1 = new Cat(4,5,65, "rasa de pisica");
-       cat1.name = "Yiti";
-       cat1.hungerLevel = 1-4;
-       cat1.setCatBreed("new cat breed");
-        System.out.println(cat1.getCatBreed());
+       Cat cat = new Cat(4,5,65, "rasa de pisica");
+       cat.name = "Yiti";
+       cat.hungerLevel = 1-4;
+       cat.setCatBreed("new cat breed");
+        System.out.println(cat.getCatBreed());
 
 
         System.out.println(animal.healthState + " "  + animal.hungerLevel + " " + animal.needForSleep);
@@ -40,9 +41,9 @@ public class App {
         System.out.println( rescuer.name + " " + rescuer.coins );
         rescuer.name = "Tom";
         rescuer.coins = 5000;
-        rescuer.feedTheAnimal(cat1.name, 4.1, "ground beef");
-        rescuer.caressedTheAnimal(horse.name, 7.8);
-        System.out.println( rescuer.name + " " + rescuer.coins );
+        rescuer.feedTheAnimal ( 4.1, cat, "ground beef");
+        rescuer.caressedTheAnimal (horse.name, 7.8);
+        System.out.println (rescuer.name + " " + rescuer.coins );
 
         AnimalFood animalFood = new AnimalFood(200, 7 );
         animalFood.name = "Meat";

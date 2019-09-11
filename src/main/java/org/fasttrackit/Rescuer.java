@@ -12,12 +12,12 @@ public class Rescuer {
         this.coins = coins;
     }
 
-    public  void  feedTheAnimal (Animal animal, AnimalFood food, Rescuer rescuer) {
+    public  void  feedTheAnimal (double animal, Cat food, String rescuer) {
 
         System.out.println( rescuer + " just gave some " + food + "meat" + animal + " result decrease in hunger level" ); }
 
 
-    public void caressedTheAnimal ( Animal animal, Rescuer rescuer){
+    public void caressedTheAnimal (String animal, double rescuer){
         System.out.println ( animal + " just gave some joy activity from: " + rescuer +  " is now purring and feel much happier ");
     }
 
