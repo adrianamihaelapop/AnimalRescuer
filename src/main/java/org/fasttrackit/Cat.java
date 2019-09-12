@@ -1,6 +1,7 @@
 package org.fasttrackit;
 
 public class Cat extends DomesticAnimal {
+
     private String catBreed;
     public Cat(int health, int hunger, int sleep, String catBreed){
         super( health,  hunger,  sleep);
