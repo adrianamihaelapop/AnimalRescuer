@@ -18,7 +18,8 @@ public class App {
         animal.setAge( 1-24);
         animal.setMood( 1-7);
         animal.setFavFood( "Meat and fruits");
-                System.out.println( animal.getHealthState() + " " + animal.getHungerLevel() + " " + animal.getNeedForSleep());
+        System.out.println( animal.getHealthState() + " " + animal.getHungerLevel() + " " + animal.getNeedForSleep());
+        System.out.println( "Animal objet " + animal.toString());
 
        Cat cat1 = new Cat(4,5,65, "rasa de pisica");
        cat1.setName( "Yiti");

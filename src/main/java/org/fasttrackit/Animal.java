@@ -84,4 +84,21 @@ public class Animal
    public void setNeedForGames(int needForGames) {
       this.needForGames = needForGames;
    }
+   public void animalJoyActivity ( ) {
+       System.out.println( " Meooowaw");
+   };
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", healthState=" + healthState +
+                ", hungerLevel=" + hungerLevel +
+                ", needForSleep=" + needForSleep +
+                ", mood=" + mood +
+                ", favFood='" + favFood + '\'' +
+                ", needForGames=" + needForGames +
+                '}';
+    }
 }
