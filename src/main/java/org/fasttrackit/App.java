@@ -74,7 +74,11 @@ public class App {
         game.setVeterinarian ( veterinarian );
           System.out.println( game.getRescuer () + animal.getName() +" " + game.getAnimal() + animal.getName() + " " + game.getVeterinarian() + veterinarian.getName());
 
-
+        System.out.println( " Overriding starts HERE");
+        animal.showState();
+        domesticAnimal.showState();
+        cat1.showState();
+        horse.showState();
     }
 
 }

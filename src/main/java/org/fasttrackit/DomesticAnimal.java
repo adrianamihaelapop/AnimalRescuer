@@ -43,7 +43,9 @@ public class DomesticAnimal extends Animal {
     public void setFriendly(boolean friendly) {
         isFriendly = friendly;
     }
-}
+    public void showState () {
+        System.out.println( "Domestic animal is feeling great! .. too great");
+}}
 
 
 //animale -> animale domestice -> pisici, cai

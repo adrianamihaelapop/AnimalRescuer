@@ -27,4 +27,6 @@ public class Horse extends DomesticAnimal {
     public void setNeedsNewHorseshoe(boolean needsNewHorseshoe) {
         this.needsNewHorseshoe = needsNewHorseshoe;
     }
-}
+    public void showState () {
+        System.out.println( "Horse is feeling great! .. too great");
+}}

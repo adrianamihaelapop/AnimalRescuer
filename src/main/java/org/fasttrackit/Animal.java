@@ -84,6 +84,8 @@ public class Animal
    public void setNeedForGames(int needForGames) {
       this.needForGames = needForGames;
    }
+
+
    public void animalJoyActivity ( ) {
        System.out.println( " Meooowaw");
    };
@@ -101,4 +103,8 @@ public class Animal
                 ", needForGames=" + needForGames +
                 '}';
     }
+    public void showState () {
+        System.out.println( "Animal is feeling great! .. too great");
+    }
+
 }
