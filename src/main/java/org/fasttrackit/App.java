@@ -62,7 +62,7 @@ public class App {
         veterinarian.diagnoses(horse.getName(), "cancer");
 
 
-        DomesticAnimal domesticAnimal = new DomesticAnimal(10, 7, 8);
+        DomesticAnimal domesticAnimal = new Cat(10, 7, 8, " cat breed " );
         domesticAnimal.setStrength(10);
         domesticAnimal.setFriendly( true);
         domesticAnimal.setVaccinated(true);
@@ -79,6 +79,16 @@ public class App {
         domesticAnimal.showState();
         cat1.showState();
         horse.showState();
+
+        System.out.println( "polymorphism");
+        Animal domesicAnimal1 = new DomesticAnimal(4, 6, 8);
+        Animal cat = new Cat( 5,7,14, "Maine Coon");
+        Animal horse1 = new Horse( 4, 3, 1);
+       domesicAnimal1.showState();
+       cat.showState();
+       horse1.showState();
     }
+
+
 
 }
