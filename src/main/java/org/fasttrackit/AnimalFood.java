@@ -5,18 +5,18 @@ import java.time.LocalDate;
 
 public class AnimalFood {
 
-  private   String name;
-  private   int price;
-  private   int quantity;
-  private   boolean stockAvailability;
-  private   LocalDate expirationDate;
-  private   int calories;
-  private   int calciumLevel;
-  private   int protein;
-  private   int fat;
-  private   int carbs;
+    private String name;
+    private int price;
+    private int quantity;
+    private boolean stockAvailability;
+    private LocalDate expirationDate;
+    private int calories;
+    private int calciumLevel;
+    private int protein;
+    private int fat;
+    private int carbs;
 
-    public AnimalFood ( int priece, int quantity){
+    public AnimalFood(int priece, int quantity) {
         price = priece;
         this.quantity = quantity;
     }
@@ -103,5 +103,6 @@ public class AnimalFood {
 
     public void isPrice() {
 
-}}
+    }
+}
 

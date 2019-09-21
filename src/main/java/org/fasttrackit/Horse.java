@@ -1,14 +1,14 @@
 package org.fasttrackit;
 
 public class Horse extends DomesticAnimal {
-   private String horseBreed;
-   private boolean needsNewHorseshoe;
+    private String horseBreed;
+    private boolean needsNewHorseshoe;
 
-    public Horse(int health, int hunger, int sleep){
-        super( health,  hunger,  sleep);
+    public Horse(int health, int hunger, int sleep) {
+        super(health, hunger, sleep);
     }
 
-    public void makesSounds(){
+    public void makesSounds() {
         System.out.println("ageuigynaweigy");
     }
 
@@ -27,6 +27,8 @@ public class Horse extends DomesticAnimal {
     public void setNeedsNewHorseshoe(boolean needsNewHorseshoe) {
         this.needsNewHorseshoe = needsNewHorseshoe;
     }
-    public void showState () {
-        System.out.println( "Horse is feeling great! .. too great");
-}}
+
+    public void showState() {
+        System.out.println("Horse is feeling great! .. too great");
+    }
+}

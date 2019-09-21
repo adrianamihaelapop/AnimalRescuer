@@ -1,14 +1,27 @@
 package org.fasttrackit;
 
-public class Game {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Game<avabileActivity, availableActivities> {
 
     // has a relationship.
 
-   private Animal animal;
-   private Veterinarian veterinarian;
-   private Rescuer rescuer;
+    private Animal animal;
+    private Veterinarian veterinarian;
+    private Rescuer rescuer;
+    private List<AnimalFood> availableFood;
+    private JoyActivity[] availableActivities;
 
-    public Game ( Animal animal, Veterinarian veterinarian, Rescuer rescuer) {
+    List<AnimalFood> getAvailableFood = new ArrayList<>();
+  //  private void initFood (List<AnimalFood> food1 food2, food3 )
+    JoyActivity[] availableActivity =new JoyActivity[5];
+
+
+
+    {}
+
+    public Game(Animal animal, Veterinarian veterinarian, Rescuer rescuer) {
         this.animal = animal;
         this.veterinarian = veterinarian;
         this.rescuer = rescuer;

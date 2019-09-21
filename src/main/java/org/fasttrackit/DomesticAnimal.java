@@ -3,14 +3,14 @@ package org.fasttrackit;
 
 // is-a relationship.
 public class DomesticAnimal extends Animal {
-    public DomesticAnimal(int health, int hunger, int sleep){
-        super( health,  hunger,  sleep);
+    public DomesticAnimal(int health, int hunger, int sleep) {
+        super(health, hunger, sleep);
     }
 
-  private boolean hasOwner;
-  private boolean isVaccinated;
-  private int strength;
-  private boolean isFriendly;
+    private boolean hasOwner;
+    private boolean isVaccinated;
+    private int strength;
+    private boolean isFriendly;
 
     public boolean isHasOwner() {
         return hasOwner;
@@ -43,9 +43,11 @@ public class DomesticAnimal extends Animal {
     public void setFriendly(boolean friendly) {
         isFriendly = friendly;
     }
-    public void showState () {
-        System.out.println( "Domestic animal is feeling great! .. too great");
-}}
+
+    public void showState() {
+        System.out.println("Domestic animal is feeling great! .. too great");
+    }
+}
 
 
 //animale -> animale domestice -> pisici, cai

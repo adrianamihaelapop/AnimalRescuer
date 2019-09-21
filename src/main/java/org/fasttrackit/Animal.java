@@ -81,7 +81,7 @@ public class Animal
       return needForGames;
    }
 
-   public void setNeedForGames(int needForGames) {
+    public void setNeedForGames(int needForGames) {
       this.needForGames = needForGames;
    }
 
