@@ -17,24 +17,38 @@ public class Rescuer {
 //
     //    System.out.println(rescuer + " just gave some " + food + "meat" + animal + " result decrease in hunger level");
     //}
-    public void feedTheAnimal(Animal x) {
+    public void feedTheAnimal(Animal x, AnimalFood y) {
 
         //     Animal y = new Animal( 2,6,8);
         //     y = x;
         //   int z = x.getHungerLevel();
-        //   z = z - 1;
+        //   z = z --;
         //   x.setHungerLevel(z);
 
         x.setHungerLevel(x.getHungerLevel() - 1);
         System.out.println(x.getHungerLevel() + " the new hunger level. ");
 
+        if (x.getFavFood() == y.getName()) {
+            x.setMood(x.getMood() + 1);
+
+
+        }
+        System.out.println(x.getMood() + " new happiness level ");
+
 
     }
 
 
-    public void caressedTheAnimal(Animal x) {
+    public void caressedTheAnimal(Animal x, JoyActivity y) {
         x.setNeedForGames(x.getNeedForGames() - 1);
         System.out.println(x.getNeedForGames() + " new need for games level. ");
+        if (x.getFavActivity() == y.name) {
+            x.setMood(x.getMood() + 2);
+
+        } else {
+            x.setMood(x.getMood() + 1);
+        }
+        System.out.println( x.getMood() + " happiness level changed");
     }
 
     public String getName() {

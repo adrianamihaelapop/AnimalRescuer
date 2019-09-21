@@ -2,13 +2,14 @@ package org.fasttrackit;
 
 public class JoyActivity {
 
-    String mame;
+
+    String name;
     double requiredTimePerActivity;
     Animal animalParticipant;
     Rescuer humanParticipant;
 
-    public JoyActivity (String mame, double requiredTimePerActivity) {
-        this.mame = mame;
+    public JoyActivity (String name, double requiredTimePerActivity) {
+        this.name = name;
         this.requiredTimePerActivity = requiredTimePerActivity;
     }
 

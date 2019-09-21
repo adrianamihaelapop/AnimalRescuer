@@ -2,93 +2,104 @@ package org.fasttrackit;
 
 import java.lang.reflect.Type;
 
-public class Animal
-{
+public class Animal {
 
-  private String name;
-  private int age;
-  private int healthState;
-  private int hungerLevel;
-  private int needForSleep;
-  private int mood;
-  private String favFood;
-  private int needForGames;
+    private String name;
+    private int age;
+    private int healthState;
+    private int hungerLevel;
+    private int needForSleep;
+    private int mood;
+    private String favFood;
+    private int needForGames;
+    private String favActivity;
 
 
-   public Animal(int health, int hunger, int sleep){
-   healthState = health;
-   hungerLevel = hunger;
-   needForSleep = sleep;
-}
+    public Animal(int health, int hunger, int sleep) {
+        healthState = health;
+        hungerLevel = hunger;
+        needForSleep = sleep;
+    }
 
-   public String getName() {
-      return name;
-   }
+    public String getName() {
+        return name;
+    }
 
-   public void setName(String name) {
-      this.name = name;
-   }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-   public int getAge() {
-      return age;
-   }
+    public int getAge() {
+        return age;
+    }
 
-   public void setAge(int age) {
-      this.age = age;
-   }
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-   public int getHealthState() {
-      return healthState;
-   }
+    public int getHealthState() {
+        return healthState;
+    }
 
-   public void setHealthState(int healthState) {
-      this.healthState = healthState;
-   }
+    public void setHealthState(int healthState) {
+        this.healthState = healthState;
+    }
 
-   public int getHungerLevel() {
-      return hungerLevel;
-   }
+    public int getHungerLevel() {
+        return hungerLevel;
+    }
 
-   public void setHungerLevel(int hungerLevel) {
-      this.hungerLevel = hungerLevel;
-   }
+    public void setHungerLevel(int hungerLevel) {
+        this.hungerLevel = hungerLevel;
+    }
 
-   public int getNeedForSleep() {
-      return needForSleep;
-   }
+    public int getNeedForSleep() {
+        return needForSleep;
+    }
 
-   public void setNeedForSleep(int needForSleep) {
-      this.needForSleep = needForSleep;
-   }
+    public void setNeedForSleep(int needForSleep) {
+        this.needForSleep = needForSleep;
+    }
 
-   public int getMood() {
-      return mood;
-   }
+    public int getMood() {
+        return mood;
+    }
 
-   public void setMood(int mood) {
-      this.mood = mood;
-   }
+    public void setMood(int mood) {
+        this.mood = mood;
+    }
 
-   public String getFavFood() {
-      return favFood;
-   }
+    public String getFavFood() {
+        return favFood;
+    }
 
-   public void setFavFood(String favFood) {
-      this.favFood = favFood;
-   }
+    public void setFavFood(String favFood) {
+        this.favFood = favFood;
+    }
 
-   public int getNeedForGames() {
-      return needForGames;
-   }
+    public int getNeedForGames() {
+        return needForGames;
+    }
+
+    public String getFavActivity() {
+        return favActivity;
+    }
+
+    public void setFavActivity(String favActivity) {
+        this.favActivity = favActivity;
+    }
 
     public void setNeedForGames(int needForGames) {
-      this.needForGames = needForGames;
-   }
+        this.needForGames = needForGames;
+
+    }
 
 
-   public void animalJoyActivity ( ) {
-       System.out.println( " Meooowaw");
-   };
+    public void animalJoyActivity() {
+        System.out.println(" Meooowaw");
+    }
+
+    ;
 
     @Override
     public String toString() {
@@ -103,8 +114,9 @@ public class Animal
                 ", needForGames=" + needForGames +
                 '}';
     }
-    public void showState () {
-        System.out.println( "Animal is feeling great! .. too great");
+
+    public void showState() {
+        System.out.println("Animal is feeling great! .. too great");
     }
 
 }
