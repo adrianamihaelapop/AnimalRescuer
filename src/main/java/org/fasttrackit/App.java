@@ -73,6 +73,7 @@ public class App {
         game.setRescuer(rescuer);
         game.setAnimal(animal);
         game.setVeterinarian(veterinarian);
+        game.start();
         System.out.println(game.getRescuer() + animal.getName() + " " + game.getAnimal() + animal.getName() + " " + game.getVeterinarian() + veterinarian.getName());
 
         System.out.println(" Overriding starts HERE");
