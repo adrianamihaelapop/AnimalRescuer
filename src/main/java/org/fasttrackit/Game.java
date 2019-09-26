@@ -2,6 +2,7 @@ package org.fasttrackit;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Game<avabileActivity, availableActivities> {
@@ -11,9 +12,12 @@ public class Game<avabileActivity, availableActivities> {
     private Animal animal;
     private Veterinarian veterinarian;
     private Rescuer rescuer;
+    private Cat cat;
+    private Horse horse;
 
     private List<AnimalFood> availableFoods = new ArrayList<>();
     private JoyActivity[] activities = new JoyActivity[6];
+
 
 
     List<AnimalFood> getAvailableFood = new ArrayList<>();
@@ -33,12 +37,35 @@ public class Game<avabileActivity, availableActivities> {
             System.out.println(availableFoods.get(i).getName());
         }
     }
+    //public String readAnimalName() {
+    //    System.out.println("Please type a name for your animal and press Enter.");
+    //    Scanner scanner = new Scanner(System.in);
+    //    String animalName = scanner.nextLine();
+    //    System.out.println("Your vehicle's name is: " +animalName);
+    //    return animalName;
 
     public void start() {
         initFood();
         initActivities();
         showFoods();
         showsActivity();
+        initAnimal();
+        initRescuer();
+    }
+
+
+    private void initAnimal() {
+        Cat cat = new Cat(5, 8, 7, "Maine coon");
+
+    }
+
+    private void initRescuer() {
+        Rescuer rescuer = new Rescuer("Tom", 30.7);
+        System.out.println("Your name is:");
+        String readRescuerName;
+        Scanner scanner = new Scanner(System.in);
+        String animalName = scanner.nextLine();
+        System.out.println("Your name is: " );
     }
 
     private void initActivities() {
@@ -63,6 +90,12 @@ public class Game<avabileActivity, availableActivities> {
         this.animal = animal;
         this.veterinarian = veterinarian;
         this.rescuer = rescuer;
+
+
+    }
+
+
+    {
     }
 
     public Animal getAnimal() {
@@ -89,4 +122,19 @@ public class Game<avabileActivity, availableActivities> {
         this.rescuer = rescuer;
     }
 
+    public Cat getCat() {
+        return cat;
+    }
+
+    public void setCat(Cat cat) {
+        this.cat = cat;
+    }
+
+    public Horse getHorse() {
+        return horse;
+    }
+
+    public void setHorse(Horse horse) {
+        this.horse = horse;
+    }
 }
