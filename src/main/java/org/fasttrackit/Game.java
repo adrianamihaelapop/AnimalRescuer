@@ -1,6 +1,7 @@
 package org.fasttrackit;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
@@ -17,55 +18,93 @@ public class Game<avabileActivity, availableActivities> {
 
     private List<AnimalFood> availableFoods = new ArrayList<>();
     private JoyActivity[] activities = new JoyActivity[6];
-
-
+    Scanner scanner = new Scanner(System.in);
 
     List<AnimalFood> getAvailableFood = new ArrayList<>();
 
     private void initFood() {
+
+        AnimalFood food = new AnimalFood(ThreadLocalRandom.current().nextInt(1, 10), ThreadLocalRandom.current().nextInt(1, 10));
         for (int i = 0; i < 3; i++) {
-            AnimalFood food = new AnimalFood(ThreadLocalRandom.current().nextInt(1, 10), ThreadLocalRandom.current().nextInt(1, 10));
+
             food.setName(" food" + i);
-            availableFoods.add(food);
-            // System.out.println(food.getName());
-        }
-
+           availableFoods.add(food);
+                    }
     }
 
-    public void showFoods() {
-        for (int i = 0; i < availableFoods.size(); i++) {
-            System.out.println(availableFoods.get(i).getName());
-        }
-    }
-    //public String readAnimalName() {
-    //    System.out.println("Please type a name for your animal and press Enter.");
-    //    Scanner scanner = new Scanner(System.in);
-    //    String animalName = scanner.nextLine();
-    //    System.out.println("Your vehicle's name is: " +animalName);
-    //    return animalName;
+   public void showFoods() {
+       for (int i = 0; i < availableFoods.size(); i++) {
+           System.out.println(availableFoods.get(i).getName());
 
-    public void start() {
-        initFood();
-        initActivities();
-        showFoods();
-        showsActivity();
-        initAnimal();
-        initRescuer();
-    }
-
+    }}
 
     private void initAnimal() {
-        Cat cat = new Cat(5, 8, 7, "Maine coon");
+        System.out.println("Please type which animal  would you like to create and press Enter.");
+        String animalName = scanner.nextLine();
+
+        if (animalName.equals("cat")) {
+            Animal animal = new Cat(1, 2, 3, "sth");
+        } else if (animalName.equals("horse")) {
+            Animal animal = new Horse(1, 2, 3);
+        } else {
+            Animal animal = new DomesticAnimal(1, 2, 3);
+        }
+
+        System.out.println("choose animal's age");
+        animal.setAge(scanner.nextInt());
+        System.out.println("animal's age is: " + animal.getAge());
+    }
+
+    private void nameAnimal() {
+        Scanner scanner2 = new Scanner(System.in);
+        System.out.println("choose the animal's name");
+        animal.setName(scanner2.nextLine());
+        System.out.println("animal's name is " + animal.getName());
+    }
+
+    public void start() {
+        // initFood();
+        // initActivities();
+        // showFoods();
+        // showsActivity();
+        initAnimal();
+        nameAnimal();
+        initRescuer();
+        requireFeeding();
+
 
     }
 
+
     private void initRescuer() {
-        Rescuer rescuer = new Rescuer("Tom", 30.7);
-        System.out.println("Your name is:");
-        String readRescuerName;
-        Scanner scanner = new Scanner(System.in);
-        String animalName = scanner.nextLine();
-        System.out.println("Your name is: " );
+        Scanner scanner1 = new Scanner(System.in);
+        Rescuer rescuer = new Rescuer("test", 30.7);
+        System.out.println("type your name: ");
+
+        // what would be an invalid input for name / String?
+        try {
+            rescuer.setName(scanner1.nextLine());
+            System.out.println("your name is: " + rescuer.getName());
+        } catch (InputMismatchException e) {
+            System.out.println("name isn't saved");
+        }
+
+        try {
+            System.out.println("introduce your age");
+            rescuer.age = scanner1.nextInt();
+            System.out.println("your age is: " + rescuer.age);
+        } catch (InputMismatchException e) {
+            System.out.println("age must be an int");
+            initRescuer();
+        }
+    }
+
+    private void requireFeeding() {
+        System.out.println("please feed the animal! Choose the food type ");
+       // showFoods();
+        //for ()
+
+
     }
 
     private void initActivities() {
