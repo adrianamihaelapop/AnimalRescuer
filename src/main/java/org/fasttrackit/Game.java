@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Game<avabileActivity, availableActivities> {
+public class Game {
 
     // has a relationship.
 
@@ -15,6 +15,7 @@ public class Game<avabileActivity, availableActivities> {
     private Rescuer rescuer;
     private Cat cat;
     private Horse horse;
+    private JoyActivity activity;
 
     private List<AnimalFood> availableFoods = new ArrayList<>();
     private JoyActivity[] activities = new JoyActivity[6];
@@ -22,68 +23,93 @@ public class Game<avabileActivity, availableActivities> {
 
     List<AnimalFood> getAvailableFood = new ArrayList<>();
 
-    private void initFood() {
-
-        AnimalFood food = new AnimalFood(ThreadLocalRandom.current().nextInt(1, 10), ThreadLocalRandom.current().nextInt(1, 10));
-        for (int i = 0; i < 3; i++) {
-
-            food.setName(" food" + i);
-           availableFoods.add(food);
-                    }
+    public Game() {
     }
 
-   public void showFoods() {
-       for (int i = 0; i < availableFoods.size(); i++) {
-           System.out.println(availableFoods.get(i).getName());
+    private void initFood() {
 
-    }}
+
+        for (int i = 0; i < 3; i++) {
+            AnimalFood food = new AnimalFood(ThreadLocalRandom.current().nextInt(1, 10), ThreadLocalRandom.current().nextInt(1, 10));
+            food.setName(" food" + i);
+            availableFoods.add(food);
+        }
+    }
+
+    public void showFoods() {
+        for (int i = 0; i < availableFoods.size(); i++) {
+            System.out.println(i + 1 + "" + availableFoods.get(i).getName());
+
+        }
+    }
 
     private void initAnimal() {
         System.out.println("Please type which animal  would you like to create and press Enter.");
         String animalName = scanner.nextLine();
+        // Animal animal;
 
         if (animalName.equals("cat")) {
-            Animal animal = new Cat(1, 2, 3, "sth");
+            animal = new Cat(10, 2, 3, "sth");
+            animal.setMood(6);
+            animal.setFavFood(availableFoods.get(0).getName());
+            animal.setFavActivity(activities[3].name);
         } else if (animalName.equals("horse")) {
-            Animal animal = new Horse(1, 2, 3);
+            animal = new Horse(8, 6, 3);
+            animal.setFavFood(availableFoods.get(1).getName());
+            animal.setFavActivity(activities[2].name);
         } else {
-            Animal animal = new DomesticAnimal(1, 2, 3);
+            animal = new DomesticAnimal(5, 5, 3);
+            animal.setFavFood(availableFoods.get(2).getName());
+            animal.setFavActivity(activities[4].name);
         }
-
+        System.out.println(animal.getHealthState());
         System.out.println("choose animal's age");
         animal.setAge(scanner.nextInt());
         System.out.println("animal's age is: " + animal.getAge());
     }
 
     private void nameAnimal() {
-        Scanner scanner2 = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("choose the animal's name");
-        animal.setName(scanner2.nextLine());
+        animal.setName(scanner.nextLine());
         System.out.println("animal's name is " + animal.getName());
     }
 
     public void start() {
-        // initFood();
-        // initActivities();
-        // showFoods();
+        initFood();
+        //showFoods();
+        initActivities();
         // showsActivity();
         initAnimal();
         nameAnimal();
         initRescuer();
-        requireFeeding();
+
+
+        long t= System.currentTimeMillis();
+        long end = t+15000;
+        while(System.currentTimeMillis() < end) {
+            requireFeeding();
+            requireActivity();
+            try {
+                Thread.sleep( 3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println(animal.getMood() + " " + animal.getHungerLevel());
 
 
     }
 
 
     private void initRescuer() {
-        Scanner scanner1 = new Scanner(System.in);
-        Rescuer rescuer = new Rescuer("test", 30.7);
+        Scanner scanner = new Scanner(System.in);
+        rescuer = new Rescuer("test", 30.7);
         System.out.println("type your name: ");
 
         // what would be an invalid input for name / String?
         try {
-            rescuer.setName(scanner1.nextLine());
+            rescuer.setName(scanner.nextLine());
             System.out.println("your name is: " + rescuer.getName());
         } catch (InputMismatchException e) {
             System.out.println("name isn't saved");
@@ -91,7 +117,7 @@ public class Game<avabileActivity, availableActivities> {
 
         try {
             System.out.println("introduce your age");
-            rescuer.age = scanner1.nextInt();
+            rescuer.age = scanner.nextInt();
             System.out.println("your age is: " + rescuer.age);
         } catch (InputMismatchException e) {
             System.out.println("age must be an int");
@@ -100,8 +126,15 @@ public class Game<avabileActivity, availableActivities> {
     }
 
     private void requireFeeding() {
+        showFoods();
         System.out.println("please feed the animal! Choose the food type ");
-       // showFoods();
+        Scanner scanner = new Scanner(System.in);
+        int userFoodChoice = scanner.nextInt();
+        // switch (userFoodChoice) {
+        //   case 1:
+        rescuer.feedTheAnimal(animal, availableFoods.get(userFoodChoice - 1));
+        //}
+
         //for ()
 
 
@@ -109,7 +142,7 @@ public class Game<avabileActivity, availableActivities> {
 
     private void initActivities() {
         for (int i = 0; i < activities.length; i++) {
-            JoyActivity activity = new JoyActivity("activity" + i, ThreadLocalRandom.current().nextDouble());
+            activity = new JoyActivity("activity" + i, ThreadLocalRandom.current().nextDouble());
             activities[i] = activity;
             //System.out.println(activity.name);}
         }
@@ -118,10 +151,18 @@ public class Game<avabileActivity, availableActivities> {
 
     public void showsActivity() {
         for (int i = 0; i < activities.length; i++) {
-            System.out.println(activities[i].name);
+            System.out.println(i+1 + " " + activities[i].name);
 
 
         }
+    }
+
+    public void requireActivity() {
+        showsActivity();
+        System.out.println("Please choose animal activity: ");
+        Scanner scanner = new Scanner(System.in);
+        int userActivityChoice = scanner.nextInt();
+        rescuer.caressedTheAnimal(animal, activities[userActivityChoice-1]);
     }
 
 
@@ -131,10 +172,6 @@ public class Game<avabileActivity, availableActivities> {
         this.rescuer = rescuer;
 
 
-    }
-
-
-    {
     }
 
     public Animal getAnimal() {

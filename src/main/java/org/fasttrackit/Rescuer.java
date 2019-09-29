@@ -28,19 +28,13 @@ public class Rescuer {
         }
         public void feedTheAnimal (Animal x, AnimalFood y){
 
-                Animal m = new Animal( 2,6,8);
-                m = x;
-              int z = x.getHungerLevel();
-              z = z --;
-              x.setHungerLevel(z);
+
 
             x.setHungerLevel(x.getHungerLevel() - 1);
             System.out.println(x.getHungerLevel() + " the new hunger level. ");
 
             if (x.getFavFood() == y.getName()) {
                 x.setMood(x.getMood() + 1);
-
-
             }
             System.out.println(x.getMood() + " new happiness level ");
 
