@@ -29,6 +29,6 @@ public class Cat extends DomesticAnimal {
     }
 
     public void showState() {
-        System.out.println("Cat is feeling great! .. too great");
+        System.out.println("Your cat is feeling great! ");
     }
 }

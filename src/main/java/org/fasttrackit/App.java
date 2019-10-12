@@ -3,9 +3,10 @@ package org.fasttrackit;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-/**
- * Hello world!
+/** Hello World
+ *
  */
+
 public class App {
     public static void main(String[] args) {
 Game game= new Game();

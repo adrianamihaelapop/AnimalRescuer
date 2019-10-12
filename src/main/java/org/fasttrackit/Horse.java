@@ -29,6 +29,6 @@ public class Horse extends DomesticAnimal {
     }
 
     public void showState() {
-        System.out.println("Horse is feeling great! .. too great");
+        System.out.println("Your horse is feeling great! ");
     }
 }

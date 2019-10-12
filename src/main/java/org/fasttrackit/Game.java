@@ -8,7 +8,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Game {
 
-    // has a relationship.
 
     private Animal animal;
     private Veterinarian veterinarian;
@@ -44,9 +43,9 @@ public class Game {
     }
 
     private void initAnimal() {
-        System.out.println("Please type which animal  would you like to create and press Enter.");
+        System.out.println("Please type which animal would you like to create and press Enter.");
         String animalName = scanner.nextLine();
-        // Animal animal;
+
 
         if (animalName.equals("cat")) {
             animal = new Cat(10, 2, 3, "sth");
@@ -85,13 +84,13 @@ public class Game {
         initRescuer();
 
 
-        long t= System.currentTimeMillis();
-        long end = t+15000;
-        while(System.currentTimeMillis() < end) {
+        long t = System.currentTimeMillis();
+        long end = t + 15000;
+        while (System.currentTimeMillis() < end) {
             requireFeeding();
             requireActivity();
             try {
-                Thread.sleep( 3000);
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -151,7 +150,7 @@ public class Game {
 
     public void showsActivity() {
         for (int i = 0; i < activities.length; i++) {
-            System.out.println(i+1 + " " + activities[i].name);
+            System.out.println(i + 1 + " " + activities[i].name);
 
 
         }
@@ -162,7 +161,7 @@ public class Game {
         System.out.println("Please choose animal activity: ");
         Scanner scanner = new Scanner(System.in);
         int userActivityChoice = scanner.nextInt();
-        rescuer.caressedTheAnimal(animal, activities[userActivityChoice-1]);
+        rescuer.caressedTheAnimal(animal, activities[userActivityChoice - 1]);
     }
 
 
